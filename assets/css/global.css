@@ -2603,7 +2603,7 @@ html {
     width: 100vw;
     z-index: 1000; }
   html:after {
-    background: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+    background: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 90%);
     content: "";
     height: 100vh;
     position: fixed;
@@ -2629,7 +2629,7 @@ body {
     width: 100vw;
     z-index: 3000; }
   body:after {
-    background: linear-gradient(to top, #3a4ed5 0%, #3acfd5 100%);
+    background: linear-gradient(to top, #3a4ed5 0%, #3acfd5 90%);
     content: "";
     height: 100vh;
     position: fixed;
