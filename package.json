@@ -1,0 +1,25 @@
+{
+	"name": "nikibrown",
+	"version": "1.0.0",
+	"description": "Nikibrown.com",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nikibrown/nikibrown.com"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nikibrown/nikibrown.com/issues"
+	},
+	"homepage": "https://github.com/nikibrown/nikibrown.com#readme",
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.0.2",
+		"node-sass": "^4.13.0"
+	}
+}
