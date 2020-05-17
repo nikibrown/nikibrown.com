@@ -11,18 +11,10 @@ function style() {
 	return (
 		gulp
 			.src("assets/scss/*.scss")
-			// Initialize sourcemaps before compilation starts
-
-			// .pipe(sourcemaps.init())
 
 			// Use sass with the files found, and log any errors
 			.pipe(sass())
 			.on("error", sass.logError)
-			// Use postcss with autoprefixer and compress the compiled file using cssnano
-
-			// .pipe(postcss([autoprefixer(), cssnano()]))
-			// // Now add/write the sourcemaps
-			// .pipe(sourcemaps.write())
 
 			// What is the destination for the compiled file?
 			.pipe(gulp.dest("assets/css"))
@@ -38,13 +30,6 @@ function watch() {
 	// gulp.watch takes in the location of the files to watch for changes
 	// and the name of the function we want to run on change
 	gulp.watch("assets/scss/**/*.scss", style);
-	// browserSync.init({
-	//     server: {
-	//         baseDir: "./"
-	//     },
-	//     injectChanges: true,
-	//     watch: true
-	// });
 }
 
 // Don't forget to expose the task!
