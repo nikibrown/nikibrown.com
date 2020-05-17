@@ -1,10 +1,6 @@
 @import "components/vars";
 @import "components/animate";
 
-.foobarbaz {
-	color: red;
-}
-
 html {
 	background: #fefff8;
 	font-family: "Heebo", sans-serif;
@@ -64,12 +60,27 @@ body {
 	}
 }
 
-a {
-	color: $blue2;
+.fancy-linky-link {
+	position: relative;
 	text-decoration: none;
-	transition: color 0.2s ease-in-out;
-	&:hover {
-		color: $purple;
+	transition: clip-path 200ms ease-in-out;
+	&:hover span::before,
+	&:focus span::before {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	span {
+		position: relative;
+		display: inline-block;
+		color: $blue2;
+		&::before {
+			position: absolute;
+			content: attr(data-content);
+			color: $purple;
+			text-decoration: underline;
+			text-decoration-color: $purple;
+			clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+			transition: clip-path 200ms ease-in-out;
+		}
 	}
 }
 
@@ -148,6 +159,8 @@ p {
 	a {
 		font-size: 4vh;
 		margin: 5px;
+		text-decoration: none;
+		transition: color 0.2s ease-in-out;
 	}
 }
 

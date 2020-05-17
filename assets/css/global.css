@@ -2586,9 +2586,6 @@
     -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important; } }
 
-.foobarbaz {
-  color: red; }
-
 html {
   background: #fefff8;
   font-family: "Heebo", sans-serif;
@@ -2638,12 +2635,25 @@ body {
     width: 10px;
     z-index: 4000; }
 
-a {
-  color: #3d94d5;
+.fancy-linky-link {
+  position: relative;
   text-decoration: none;
-  transition: color 0.2s ease-in-out; }
-  a:hover {
-    color: #a35ef6; }
+  transition: clip-path 200ms ease-in-out; }
+  .fancy-linky-link:hover span::before,
+  .fancy-linky-link:focus span::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  .fancy-linky-link span {
+    position: relative;
+    display: inline-block;
+    color: #3d94d5; }
+    .fancy-linky-link span::before {
+      position: absolute;
+      content: attr(data-content);
+      color: #a35ef6;
+      text-decoration: underline;
+      text-decoration-color: #a35ef6;
+      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+      transition: clip-path 200ms ease-in-out; }
 
 main {
   justify-content: center;
@@ -2704,7 +2714,9 @@ p {
   text-align: center; }
   .social a {
     font-size: 4vh;
-    margin: 5px; }
+    margin: 5px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out; }
 
 .linkedin {
   color: #0073b1; }
