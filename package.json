@@ -19,7 +19,7 @@
   "homepage": "https://github.com/nikibrown/XYZ",
   "devDependencies": {
     "gulp-postcss": "^8.0.0",
-    "node-sass": "^4.13.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
