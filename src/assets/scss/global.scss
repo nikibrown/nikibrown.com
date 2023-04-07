@@ -141,13 +141,20 @@ h1 {
 }
 
 .more-content {
-	margin-top: 100px;
+	
 	text-align: center;
+
+	@media (min-width: 900px) {
+		margin-top: 100px;
+	}
 }
 
 p {
 	font-size: 20px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
+	@media (min-width: 900) {
+		margin-bottom: 50px;
+	}
 }
 
 .intro {
@@ -158,30 +165,33 @@ p {
 .social {
 	text-align: center;
 	a {
-		font-size: 4vh;
 		margin: 5px;
 		text-decoration: none;
-		transition: color 0.2s ease-in-out;
+
+		svg {
+			height: 50px;
+			width: 50px;
+		}
 	}
 }
 
 .linkedin {
-	color: #0073b1;
+	fill: #0073b1;
 	&:hover {
-		color: #0084cb;
+		fill: #0084cb;
 	}
 }
 
 .github {
-	color: #333;
+	fill: #333;
 	&:hover {
-		color: #4d4d4d;
+		fill: #4d4d4d;
 	}
 }
 
 .email {
-	color: #666;
+	fill: #666;
 	&:hover {
-		color: gray;
+		fill: gray;
 	}
 }
