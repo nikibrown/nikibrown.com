@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Niki Brown - Full Stack Engineer &amp; Designer based in San Francisco,
+      California
+    </title>
+    <meta name="keywords" content="ERMAGHERDDDD SEO" />
+    <meta
+      name="description"
+      content="Something something SEO. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    />
+    <meta name="language" content="en-us" />
+    <meta name="robots" content="index,follow" />
+    <meta name="distribution" content="global" />
+    <link rel="canonical" href="https://nikibrown.com/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta name="copyright" content="Copyright 1999 - ∞ Niki Brown" />
+    <meta name="author" content="Niki Brown" />
+    <meta http-equiv="reply-to" content="hi@nikibrown.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      // Set theme before paint to avoid a flash of the wrong colors.
+      (function () {
+        try {
+          const stored = localStorage.getItem("theme");
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Niki Brown",
+        "url": "https://nikibrown.com/",
+        "jobTitle": "Full Stack Engineer & Designer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "email": "mailto:hi@nikibrown.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/nikibrown/",
+          "https://github.com/nikibrown"
+        ]
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: "Departure Mono";
+        src: url("assets/DepartureMono-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      :root {
+        color-scheme: dark;
+        --bg: oklch(0.16 0.01 150);
+        --win-bg: oklch(0.12 0.012 150);
+        --border: oklch(0.28 0.02 150);
+        --fg: oklch(0.92 0.01 150);
+        --dim: oklch(0.72 0.02 150);
+        --accent: oklch(0.78 0.16 150);
+        --accent-underline: oklch(0.78 0.16 150 / 0.35);
+        --titlebar-bg: oklch(0.15 0.012 150);
+        --highlight: oklch(0.815 0.137 152 / 0.35);
+        --focus-ring: oklch(0.815 0.137 152);
+      }
+
+      html[data-theme="light"] {
+        color-scheme: light;
+        --bg: oklch(0.98 0.005 120);
+        --win-bg: oklch(0.995 0.003 120);
+        --border: oklch(0.85 0.01 120);
+        --fg: oklch(0.22 0.01 150);
+        --dim: oklch(0.42 0.02 255);
+        --accent: oklch(0.55 0.16 255);
+        --accent-underline: oklch(0.55 0.16 255 / 0.35);
+        --titlebar-bg: oklch(0.98 0.006 120);
+        --highlight: oklch(0.815 0.137 255 / 0.35);
+        --focus-ring: oklch(0.55 0.16 255);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "Departure Mono", "SF Mono", Menlo, Consolas, monospace;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+      }
+
+      ::selection {
+        background: var(--highlight);
+      }
+
+      :focus {
+        outline: none;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 3px;
+        background: var(--highlight);
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        z-index: 100;
+        padding: 10px 14px;
+        background: var(--win-bg);
+        color: var(--accent);
+        border: 1px solid var(--focus-ring);
+        text-decoration: none;
+        transform: translateY(-150%);
+        transition: transform 0.2s ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 3px;
+        background: var(--highlight);
+      }
+
+      .window {
+        width: 100%;
+        min-height: 100vh;
+        background: var(--win-bg);
+        display: flex;
+        flex-direction: column;
+        transition: background 0.25s ease;
+      }
+
+      .titlebar,
+      .footer {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        background: var(--titlebar-bg);
+        transition:
+          background 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .titlebar {
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border);
+      }
+      .footer {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-top: 1px solid var(--border);
+        font-size: 14px;
+      }
+
+      .titlebar-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .titlebar-chrome {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.25s ease;
+      }
+
+      .titlebar-left:hover .dot {
+        background: var(--accent);
+      }
+
+      .dot-tooltip {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        z-index: 20;
+        max-width: 660px;
+        width: max-content;
+        padding: 8px 10px;
+        background: var(--win-bg);
+        color: var(--fg);
+        border: 1px solid var(--border);
+        font-size: 10px;
+        line-height: 1.4;
+        white-space: normal;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition:
+          opacity 0.15s ease,
+          transform 0.15s ease,
+          background 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .dot-tooltip.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .folder-icon {
+        position: relative;
+        margin-left: 10px;
+        width: 13px;
+        height: 10px;
+        background: var(--dim);
+        border-radius: 0 2px 2px 2px;
+        display: inline-block;
+        transition: background 0.25s ease;
+      }
+
+      .folder-icon::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 0;
+        width: 6px;
+        height: 3px;
+        background: var(--dim);
+        border-radius: 2px 2px 0 0;
+        transition: background 0.25s ease;
+      }
+
+      .titlebar-title {
+        margin-left: 4px;
+        font-size: 13px;
+        color: var(--dim);
+        transition: color 0.25s ease;
+      }
+
+      .theme-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        min-width: 44px;
+        min-height: 44px;
+        background: transparent;
+        border: none;
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-family: inherit;
+        font-size: 15px;
+        color: var(--dim);
+        cursor: pointer;
+        transition:
+          color 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .theme-toggle:hover,
+      .theme-toggle:focus-visible {
+        color: var(--accent);
+      }
+
+      .body {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 40px;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        max-width: 640px;
+      }
+
+      .name-line {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        font-size: 40px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .prompt {
+        color: var(--accent);
+        transition: color 0.25s ease;
+      }
+      .name {
+        color: var(--fg);
+        transition: color 0.25s ease;
+      }
+
+      .bio {
+        color: var(--dim);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0 0 8px 0;
+        max-width: 520px;
+        transition: color 0.25s ease;
+      }
+
+      .section {
+        font-size: 15px;
+        line-height: 1.9;
+        color: var(--fg);
+        transition: color 0.25s ease;
+      }
+
+      .label {
+        display: inline;
+        font-size: inherit;
+        font-weight: inherit;
+        color: var(--dim);
+        margin: 0 6px 0 0;
+        transition: color 0.25s ease;
+      }
+
+      a.link,
+      a.icon-link {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-underline);
+        transition:
+          border-color 0.2s ease,
+          color 0.25s ease,
+          background 0.25s ease;
+        cursor: pointer;
+      }
+
+      a.link:hover,
+      a.link:focus-visible,
+      a.icon-link:hover,
+      a.icon-link:focus-visible {
+        border-bottom-color: var(--accent);
+      }
+
+      a.icon-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 8px;
+        color: var(--dim);
+        border-bottom: none;
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      a.icon-link:hover,
+      a.icon-link:focus-visible {
+        color: var(--accent);
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="window">
+      <header class="titlebar">
+        <div class="titlebar-left">
+          <span class="titlebar-chrome" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="folder-icon"></span>
+            <span class="dot-tooltip" id="dotTooltip" role="tooltip"
+              >This would be a good place to hide an easter egg 🥚</span
+            >
+          </span>
+          <span class="titlebar-title">nikibrown.com</span>
+        </div>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="themeToggle"
+          aria-pressed="false"
+          aria-label="Switch to light mode"
+        >
+          <i id="themeIcon" class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
+      </header>
+
+      <main id="main" class="body" tabindex="-1">
+        <div class="content">
+          <h1 class="name-line">
+            <span class="prompt" aria-hidden="true">&gt;</span>
+            <span class="name" id="typedName">Hi, I'm Niki.</span>
+          </h1>
+
+          <h2 class="bio">
+            I'm a Full Stack Engineer &amp; Designer based in San Francisco,
+            California.
+          </h2>
+
+          <div class="section">
+            <h3 class="label">Selected Work:</h3>
+            <a
+              class="link"
+              href="https://www.allora-industries.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Allora Industries<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://protectmedicaidvigil.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Protect Medicaid Vigil<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://careconversations.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Care Conversations<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://advising.mit.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT Undergraduate Advising Center<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://upop.mit.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT UPOP<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://epicwestern.com/cocktails/ranch-water/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Epic Western<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://microbiology.mit.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT Microbiology<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://mitcommlab.mit.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MIT Communications Lab<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >,
+            <a
+              class="link"
+              href="https://insights.bookbub.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BookBub Insights<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >
+          </div>
+
+          <div class="section">
+            <h3 class="label">Side Projects:</h3>
+            <a
+              class="link"
+              href="https://barbellcalculator.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Barbell Calculator<span class="visually-hidden">
+                (opens in new tab)</span
+              ></a
+            >
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <a
+          class="icon-link"
+          href="https://www.linkedin.com/in/nikibrown/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn (opens in new tab)"
+          ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+        ></a>
+        <a
+          class="icon-link"
+          href="https://github.com/nikibrown"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub (opens in new tab)"
+          ><i class="fa-brands fa-github" aria-hidden="true"></i
+        ></a>
+        <a
+          class="icon-link"
+          href="mailto:hi@nikibrown.com"
+          aria-label="Email"
+          ><i class="fa-solid fa-envelope" aria-hidden="true"></i
+        ></a>
+      </footer>
+    </div>
+
+    <script>
+      // --- Theme toggle ---
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+
+      // Apply theme to <html> and sync the toggle icon / ARIA labels.
+      function applyTheme(theme) {
+        const isLight = theme === "light";
+        document.documentElement.setAttribute("data-theme", theme);
+        themeIcon.className = isLight
+          ? "fa-solid fa-moon"
+          : "fa-solid fa-sun";
+        themeToggle.setAttribute("aria-pressed", String(isLight));
+        themeToggle.setAttribute(
+          "aria-label",
+          isLight ? "Switch to dark mode" : "Switch to light mode",
+        );
+      }
+
+      // Prefer a saved choice; otherwise follow the OS color scheme.
+      function getPreferredTheme() {
+        try {
+          const stored = localStorage.getItem("theme");
+          if (stored === "light" || stored === "dark") return stored;
+        } catch (e) {}
+        return window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+      }
+
+      applyTheme(getPreferredTheme());
+
+      themeToggle.addEventListener("click", function () {
+        const next =
+          document.documentElement.getAttribute("data-theme") === "light"
+            ? "dark"
+            : "light";
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
+        applyTheme(next);
+      });
+
+      // --- Name typewriter ---
+      // Reveal the name character-by-character unless the user prefers reduced motion.
+      const typedEl = document.getElementById("typedName");
+      const fullName = typedEl.textContent;
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!prefersReducedMotion) {
+        typedEl.textContent = "";
+        let i = 0;
+        const timer = setInterval(function () {
+          i++;
+          typedEl.textContent = fullName.slice(0, i);
+          if (i >= fullName.length) clearInterval(timer);
+        }, 80);
+      }
+
+      // --- Window chrome dots tooltip ---
+      const dots = document.querySelectorAll(".dot");
+      const dotTooltip = document.getElementById("dotTooltip");
+
+      function isDotTooltipVisible() {
+        return dotTooltip.classList.contains("is-visible");
+      }
+
+      function hideDotTooltip() {
+        dotTooltip.classList.remove("is-visible");
+      }
+
+      function showDotTooltip() {
+        dotTooltip.classList.add("is-visible");
+      }
+
+      // Open on dot click; stopPropagation so the document click handler doesn't close it immediately.
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function (event) {
+          event.stopPropagation();
+          showDotTooltip();
+        });
+      });
+
+      // Close when clicking outside the tooltip / dots.
+      document.addEventListener("click", function (event) {
+        if (!isDotTooltipVisible()) return;
+        const target = event.target;
+        if (dotTooltip.contains(target) || target.closest(".dot")) return;
+        hideDotTooltip();
+      });
+
+      // Close on Escape.
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && isDotTooltipVisible()) {
+          hideDotTooltip();
+        }
+      });
+    </script>
+  </body>
+</html>
