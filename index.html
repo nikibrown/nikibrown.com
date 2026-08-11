@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96EVNWSY17"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-96EVNWSY17");
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -568,10 +579,7 @@
           aria-label="GitHub (opens in new tab)"
           ><i class="fa-brands fa-github" aria-hidden="true"></i
         ></a>
-        <a
-          class="icon-link"
-          href="mailto:hi@nikibrown.com"
-          aria-label="Email"
+        <a class="icon-link" href="mailto:hi@nikibrown.com" aria-label="Email"
           ><i class="fa-solid fa-envelope" aria-hidden="true"></i
         ></a>
       </footer>
@@ -586,9 +594,7 @@
       function applyTheme(theme) {
         const isLight = theme === "light";
         document.documentElement.setAttribute("data-theme", theme);
-        themeIcon.className = isLight
-          ? "fa-solid fa-moon"
-          : "fa-solid fa-sun";
+        themeIcon.className = isLight ? "fa-solid fa-moon" : "fa-solid fa-sun";
         themeToggle.setAttribute("aria-pressed", String(isLight));
         themeToggle.setAttribute(
           "aria-label",
