@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-96EVNWSY17"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-96EVNWSY17"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -266,6 +269,45 @@
       .dot-tooltip.is-visible {
         opacity: 1;
         transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .egg-burst {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        pointer-events: none;
+        font-size: 0;
+      }
+
+      .egg-particle {
+        position: absolute;
+        font-size: 28px;
+        opacity: 0;
+        top: -40px;
+        transform: translateY(0) rotate(0deg);
+        animation: egg-rain 1.8s linear forwards;
+      }
+
+      @keyframes egg-rain {
+        0% {
+          opacity: 0;
+          transform: translateY(0) rotate(0deg);
+        }
+        8% {
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(calc(var(--dy) * 0.5)) rotate(calc(var(--rot) * 0.5));
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(var(--dy)) rotate(var(--rot));
+        }
       }
 
       .folder-icon {
@@ -433,9 +475,10 @@
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="folder-icon"></span>
-            <span class="dot-tooltip" id="dotTooltip" role="tooltip"
-              >This would be a good place to hide an easter egg 🥚</span
-            >
+            <span class="dot-tooltip" id="dotTooltip" role="tooltip">
+              This would be a good place to hide an easter egg
+              <span id="eggTrigger" style="cursor: pointer">🥚</span>
+            </span>
           </span>
           <span class="titlebar-title">nikibrown.com</span>
         </div>
@@ -681,6 +724,33 @@
         if (event.key === "Escape" && isDotTooltipVisible()) {
           hideDotTooltip();
         }
+      });
+
+      // --- Egg rain easter egg ---
+      const eggTrigger = document.getElementById("eggTrigger");
+
+      eggTrigger.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const burst = document.createElement("div");
+        burst.className = "egg-burst";
+        const count = 40;
+        for (let i = 0; i < count; i++) {
+          const egg = document.createElement("span");
+          egg.className = "egg-particle";
+          egg.textContent = "🥚";
+          const x = Math.random() * window.innerWidth;
+          const dy = window.innerHeight + 80 + Math.random() * 200;
+          const rot = (Math.random() - 0.5) * 90 + (Math.random() < 0.5 ? -1 : 1) * 360;
+          egg.style.left = x + "px";
+          egg.style.setProperty("--dy", dy + "px");
+          egg.style.setProperty("--rot", rot + "deg");
+          egg.style.animationDelay = Math.random() * 1.8 + "s";
+          burst.appendChild(egg);
+        }
+        document.body.appendChild(burst);
+        setTimeout(function () {
+          burst.remove();
+        }, 3700);
       });
     </script>
   </body>
